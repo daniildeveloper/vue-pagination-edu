@@ -139,7 +139,7 @@ PAGINATION
     transition: all .2s ease-in-out;
 }
 
-.pagination a:hover {
+.pagination a:hover, .pagination a.current {
   border-color: #ea4c89;
   color: #ea4c89;
 }
@@ -158,5 +158,5 @@ PAGINATION
 
 .pagination__mid li {
   display: inline-block;
-  
+
 }

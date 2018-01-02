@@ -52,7 +52,8 @@ Vue.component('pagination', {
       }
 
       return pages;
-    }
+    },
+
   },
   methods: {
     /**
@@ -69,6 +70,12 @@ Vue.component('pagination', {
     },
     hasNext: function () {
       return this.current < this.totalPages
+    },
+    hasFirst: function () {
+      return this.rangeStart !== 1
+    },
+    hasLast: function () {
+      return this.rangeEnd !== this.totalPages
     }
   }
 })

@@ -19,8 +19,14 @@
       <div class="pagination__mid">
         <span>{{current}} из {{totalPages}} </span>
         <ul>
+          <li>
+            <a href="#" v-if="hasFirst()" @click="changePage(1)">1</a>
+          </li>
           <li v-for="page in pages">
-            <a href="#" @click="changePage(page)" >{{page}}</a>
+            <a href="#" @click="changePage(page)" :class="{ current : current == page }">{{page}}</a>
+          </li>
+          <li>
+            <a href="#" v-if="hasLast()" @click="changePage(totalPages)">{{totalPages}}</a>
           </li>
         </ul>
       </div>
