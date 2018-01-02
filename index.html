@@ -10,7 +10,18 @@
 </head>
 
 <body>
+  <template id="pagination-template">
+    <div class="pagination">
+      <div class="pagination__left">
+        <a href="#">Предыдущая</a>
+      </div>
+      <div class="pagination__right">
+        <a href="#">Следующая</a>
+      </div>
+    </div>
+  </template>
   <div id="app">
+    <pagination></pagination>
     <div class="grid">
       <div class="grid__item card" v-for="photo in photos">
         <div class="card__body">
@@ -30,6 +41,7 @@
   <script src="node_modules/vue/dist/vue.min.js"></script>
   <script src="node_modules/vue-resource/dist/vue-resource.min.js"></script>
   <script src="app.js"></script>
+  <script src="pagination.js"></script>
 </body>
 
 </html>
