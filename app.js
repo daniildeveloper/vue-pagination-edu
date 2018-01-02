@@ -17,7 +17,7 @@ new Vue({
         params: {
           client_id: appID,
           page: page,
-          perPage: this.perPage,
+          per_page: this.perPage,
         }
       }
       this.$http.get('https://api.unsplash.com/photos', options)
