@@ -13,17 +13,27 @@
   <template id="pagination-template">
     <div class="pagination">
       <div class="pagination__left">
-        <a href="#" @click="changePage(prevPage)">Предыдущая</a>
+        <a href="#" v-if="hasPrev()" @click="changePage(prevPage)">Предыдущая</a>
       </div>
+
+      <div class="pagination__mid">
+        <span>{{current}} из {{totalPages}} </span>
+        <ul>
+          <li v-for="page in pages">
+            <a href="#" @click="changePage(page)" >{{page}}</a>
+          </li>
+        </ul>
+      </div>
+
       <div class="pagination__right">
-        <a href="#" @click="changePage(nextPage)">Следующая</a>
+        <a href="#" v-if="hasNext()" @click="changePage(nextPage)">Следующая</a>
       </div>
     </div>
   </template>
 
   <div id="app">
     <!-- Передаем как свойство текущую страницу и на событие `page-changed` запускаем   `fetchPhotos`, которое загружает фотографии -->
-    <pagination :current="currentPage" @page-changed="fetchPhotos" ></pagination>
+    <pagination :current="currentPage" @page-changed="fetchPhotos" :total="totalPhotos" :perPage="perPage"></pagination>
     <div class="grid">
       <div class="grid__item card" v-for="photo in photos">
         <div class="card__body">

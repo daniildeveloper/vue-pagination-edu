@@ -120,7 +120,7 @@ PAGINATION
     float: right;
 }
 
-.pagination a {
+.pagination a, .pagination span {
     display: block;
     text-align: center;
     font-family: Helvetica, sans-serif;
@@ -142,5 +142,21 @@ PAGINATION
 .pagination a:hover {
   border-color: #ea4c89;
   color: #ea4c89;
+}
 
+.pagination__mid {
+  display: flex;
+  justify-content: center;
+  width: 60%;
+}
+
+.pagination__mid ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pagination__mid li {
+  display: inline-block;
+  
 }
